@@ -14,12 +14,12 @@ Stopped sandboxing actions for PowerShell execution in GitHub Actions workflows,
 - Includes explicit permissions (`contents: read`) for security
 - Can be triggered manually or called from other workflows
 
-### 2. Documentation (`.docs/architecture/Masterblueprint.md`)
+### 2. Documentation (`docs/architecture/Masterblueprint.md`)
 - Explains PowerShell execution policy bypass approach
 - Documents security considerations and warnings
 - Provides usage examples and references
 
-### 3. README (`.README.md`)
+### 3. README (`README.md`)
 - Overview of repository structure
 - Quick start guide for workflows
 - Security notes
