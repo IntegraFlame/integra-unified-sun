@@ -1,0 +1,27 @@
+# Workflow to run PowerShell commands without sandboxing restrictions
+name: PowerShell Setup (No Sandbox)
+
+on:
+  # Allows manual workflow execution
+  workflow_dispatch:
+  # Can be called by other workflows
+  workflow_call:
+
+jobs:
+  setup:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      - name: Install UV Package Manager (No Sandbox)
+        shell: powershell
+        run: |
+          # Execute without sandboxing restrictions
+          powershell -ExecutionPolicy Bypass -Command "irm https://astral.sh/uv/install.ps1 | iex"
+          
+      - name: Verify UV Installation
+        shell: powershell
+        run: |
+          # Check if UV was installed successfully
+          uv --version
