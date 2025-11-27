@@ -7,6 +7,10 @@ on:
   # Can be called by other workflows
   workflow_call:
 
+# Set minimal permissions for security
+permissions:
+  contents: read
+
 jobs:
   setup:
     runs-on: windows-latest
