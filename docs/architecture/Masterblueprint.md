@@ -12,10 +12,12 @@ By default, some execution environments may apply sandboxing restrictions that p
 
 ### PowerShell Execution Policy Bypass
 
-The workflow uses `-ExecutionPolicy Bypass` flag to disable sandboxing restrictions:
+The workflow uses `-ExecutionPolicy Bypass` flag at the shell level to disable sandboxing restrictions:
 
-```powershell
-powershell -ExecutionPolicy Bypass -Command "irm https://astral.sh/uv/install.ps1 | iex"
+```yaml
+shell: pwsh -ExecutionPolicy Bypass -Command {0}
+run: |
+  irm https://astral.sh/uv/install.ps1 | iex
 ```
 
 ### Key Components
